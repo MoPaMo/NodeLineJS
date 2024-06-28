@@ -4,8 +4,10 @@ extends Panel
 @onready var input_boxes = get_input_boxes()
 @onready var output_boxes = get_output_boxes()
 @export var nodeName: String = "Default Node"
-
+var dragging: bool = false
+var offset = Vector2.ZERO
 func _ready():
+	set_process_input(true)
 	$VBoxContainer/Label.text=nodeName
 	# Connect the text_changed signal to a custom method using Callable for all input LineEdit nodes
 	for input_box in input_boxes:
@@ -47,3 +49,19 @@ func _recalculate() -> void:
 		# Update the output LineEdit
 		for outputField in output_boxes:
 			outputField.set_text(combined_text.strip_edges())
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	if dragging:
+		global_position = get_viewport().get_mouse_position() - offset
+
+func _input(event):
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT:
+			if event.pressed:
+				if get_global_rect().has_point(event.position):
+					dragging = true
+					offset = event.position - global_position
+			else:
+				dragging = false
