@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://8uog5cow04ho"]
+[gd_scene load_steps=4 format=3 uid="uid://8uog5cow04ho"]
 
 [ext_resource type="Script" path="res://default_node.gd" id="1_dimob"]
-[ext_resource type="PackedScene" uid="uid://bhhk5wlqhwog5" path="res://input.tscn" id="2_vk5u0"]
+[ext_resource type="PackedScene" uid="uid://bhhk5wlqhwog5" path="res://inputField.tscn" id="2_vk5u0"]
+[ext_resource type="PackedScene" uid="uid://dwiy17op61g7i" path="res://outputField.tscn" id="3_ovhey"]
 
 [node name="CustomNode" type="Panel"]
 offset_right = 40.0
@@ -34,20 +35,8 @@ layout_mode = 2
 [node name="Outs" type="VBoxContainer" parent="VBoxContainer/InOutSection"]
 layout_mode = 2
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer/InOutSection/Outs"]
+[node name="HBoxContainer3" parent="VBoxContainer/InOutSection/Outs" instance=ExtResource("3_ovhey")]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/InOutSection/Outs/HBoxContainer3"]
-layout_mode = 2
-
-[node name="LineEdit" type="LineEdit" parent="VBoxContainer/InOutSection/Outs/HBoxContainer3"]
-layout_mode = 2
-
-[node name="HBoxContainer4" type="HBoxContainer" parent="VBoxContainer/InOutSection/Outs"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="VBoxContainer/InOutSection/Outs/HBoxContainer4"]
-layout_mode = 2
-
-[node name="LineEdit" type="LineEdit" parent="VBoxContainer/InOutSection/Outs/HBoxContainer4"]
+[node name="HBoxContainer4" parent="VBoxContainer/InOutSection/Outs" instance=ExtResource("3_ovhey")]
 layout_mode = 2

@@ -43,5 +43,5 @@ func _recalculate() -> void:
 			combined_text += input_box.get_text() + " "
 		
 		# Update the output LineEdit
-		for line_edit_output in output_boxes:
-			line_edit_output.get_node("LineEdit").text = combined_text.strip_edges()
+		for outputField in output_boxes:
+			outputField.set_text(combined_text.strip_edges())
