@@ -7,8 +7,7 @@ extends Panel
 func _ready():
 	# Connect the text_changed signal to a custom method using Callable for all input LineEdit nodes
 	for input_box in input_boxes:
-		var line_edit = input_box.get_node("LineEdit")
-		line_edit.text_changed.connect(Callable(self, "_on_line_edit_text_changed"))
+		input_box.input_changed.connect(Callable(self, "_on_line_edit_text_changed"))
 
 # Function to get input boxes
 func get_input_boxes():
@@ -41,8 +40,7 @@ func _recalculate() -> void:
 		
 		# Combine the texts of all input LineEdit nodes
 		for input_box in input_boxes:
-			var line_edit_input = input_box.get_node("LineEdit")
-			combined_text += line_edit_input.text + " "
+			combined_text += input_box.get_text() + " "
 		
 		# Update the output LineEdit
 		for line_edit_output in output_boxes:
