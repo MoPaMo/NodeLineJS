@@ -1,8 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://cv8qkdy6lxlxw"]
+[gd_scene load_steps=3 format=3 uid="uid://cv8qkdy6lxlxw"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_x07wh"]
+[ext_resource type="PackedScene" uid="uid://bgvwpkm2jhg7l" path="res://scenes/Node.tscn" id="2_j1t7o"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_x07wh")
+
+[node name="Node" parent="." instance=ExtResource("2_j1t7o")]
+script = null
