@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://dwiy17op61g7i" path="res://outputField.tscn" id="3_ovhey"]
 
 [node name="CustomNode" type="Panel"]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 175.0
+offset_bottom = 160.0
 script = ExtResource("1_dimob")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
