@@ -1,7 +1,9 @@
 extends HBoxContainer
 signal input_changed(new_text: String)
 @export var fieldName: String = "Output"
+@export var data_type: String ="Any"
 var line_edit: LineEdit
+var connectedTo
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
