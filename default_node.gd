@@ -1,9 +1,9 @@
 extends Panel
 
 # Declare variables for the LineEdit nodes
-@onready var line_edit_1 = $VBoxContainer/HBoxContainer/LineEdit
-@onready var line_edit_2 = $VBoxContainer/HBoxContainer2/LineEdit
-@onready var line_edit_3 = $VBoxContainer/HBoxContainer3/LineEdit
+@onready var line_edit_1 = $VBoxContainer/InOutSection/Ins/HBoxContainer/LineEdit
+@onready var line_edit_2 = $VBoxContainer/InOutSection/Ins/HBoxContainer2/LineEdit
+@onready var line_edit_3 = $VBoxContainer/InOutSection/Outs/HBoxContainer3/LineEdit
 
 func _ready():
 	# Connect the text_changed signal to custom methods using Callable
