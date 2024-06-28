@@ -1,3 +1,11 @@
-[gd_scene format=3 uid="uid://bo2k8jmf4xreu"]
+[gd_scene load_steps=2 format=3 uid="uid://bo2k8jmf4xreu"]
+
+[ext_resource type="PackedScene" uid="uid://8uog5cow04ho" path="res://default_node.tscn" id="1_fydfn"]
 
 [node name="Main" type="Node2D"]
+
+[node name="CustomNode" parent="." instance=ExtResource("1_fydfn")]
+offset_left = 339.0
+offset_top = 161.0
+offset_right = 379.0
+offset_bottom = 201.0
