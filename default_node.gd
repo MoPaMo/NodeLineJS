@@ -37,7 +37,6 @@ func _on_line_edit_text_changed(new_text: String) -> void:
 func _recalculate() -> void:
 	# Assuming there's only one output LineEdit for simplicity
 	if output_boxes.size() > 0:
-		var line_edit_output = output_boxes[0].get_node("LineEdit")
 		var combined_text = ""
 		
 		# Combine the texts of all input LineEdit nodes
@@ -46,4 +45,5 @@ func _recalculate() -> void:
 			combined_text += line_edit_input.text + " "
 		
 		# Update the output LineEdit
-		line_edit_output.text = combined_text.strip_edges()
+		for line_edit_output in output_boxes:
+			line_edit_output.get_node("LineEdit").text = combined_text.strip_edges()

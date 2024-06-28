@@ -50,3 +50,12 @@ layout_mode = 2
 
 [node name="LineEdit" type="LineEdit" parent="VBoxContainer/InOutSection/Outs/HBoxContainer3"]
 layout_mode = 2
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="VBoxContainer/InOutSection/Outs"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/InOutSection/Outs/HBoxContainer4"]
+layout_mode = 2
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/InOutSection/Outs/HBoxContainer4"]
+layout_mode = 2
