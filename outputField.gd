@@ -1,10 +1,12 @@
 extends HBoxContainer
 signal input_changed(new_text: String)
+@export var fieldName: String = "Output"
 var line_edit: LineEdit
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# Find the LineEdit node
+	$Label.text=fieldName
 	line_edit = $LineEdit
 	# Connect LineEdit's text_changed signal to custom method
 	line_edit.text_changed.connect(Callable(self, "_on_line_edit_text_changed"))

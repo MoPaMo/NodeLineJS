@@ -25,6 +25,7 @@ layout_mode = 2
 
 [node name="HBoxContainer" parent="VBoxContainer/InOutSection/Ins" instance=ExtResource("2_vk5u0")]
 layout_mode = 2
+fieldName = "Input "
 
 [node name="HBoxContainer2" parent="VBoxContainer/InOutSection/Ins" instance=ExtResource("2_vk5u0")]
 layout_mode = 2

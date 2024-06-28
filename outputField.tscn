@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://outputField.gd" id="1_22boh"]
 
-[node name="HBoxContainer3" type="HBoxContainer"]
+[node name="OutputField" type="HBoxContainer"]
 script = ExtResource("1_22boh")
 
 [node name="Label" type="Label" parent="."]

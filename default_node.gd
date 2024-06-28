@@ -3,8 +3,10 @@ extends Panel
 # Declare variables for the LineEdit nodes
 @onready var input_boxes = get_input_boxes()
 @onready var output_boxes = get_output_boxes()
+@export var nodeName: String = "Default Node"
 
 func _ready():
+	$VBoxContainer/Label.text=nodeName
 	# Connect the text_changed signal to a custom method using Callable for all input LineEdit nodes
 	for input_box in input_boxes:
 		input_box.input_changed.connect(Callable(self, "_on_line_edit_text_changed"))
