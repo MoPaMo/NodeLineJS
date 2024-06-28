@@ -1,4 +1,5 @@
-extends Control
+extends Node2D
+
 
 var first_button_pressed = null
 var line = Line2D.new()
@@ -10,6 +11,7 @@ func _ready():
 func hw():
 	print("Hello WOrlds")
 	return
+
 func press(button):
 	if first_button_pressed == null:
 		first_button_pressed = button
