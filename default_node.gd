@@ -4,13 +4,8 @@ extends Panel
 @onready var input_boxes = get_input_boxes()
 @onready var output_boxes = get_output_boxes()
 
-# Assuming you have specific LineEdit nodes you want to reference
-@onready var line_edit_1 = input_boxes[0].get_node("LineEdit") if input_boxes.size() > 0 else null
-@onready var line_edit_2 = input_boxes[1].get_node("LineEdit") if input_boxes.size() > 1 else null
-@onready var line_edit_3 = output_boxes[0].get_node("LineEdit") if output_boxes.size() > 0 else null
-
 func _ready():
-	# Connect the text_changed signal to custom methods using Callable
+	# Connect the text_changed signal to a custom method using Callable for all input LineEdit nodes
 	for input_box in input_boxes:
 		var line_edit = input_box.get_node("LineEdit")
 		line_edit.text_changed.connect(Callable(self, "_on_line_edit_text_changed"))
@@ -33,12 +28,22 @@ func get_output_boxes():
 			result.append(child)
 	return result
 
-# Define the custom methods to handle the signal
+# Define the custom method to handle the signal
 func _on_line_edit_text_changed(new_text: String) -> void:
 	print("Text in LineEdit changed to: ", new_text)
-	_update_line_edit_3()
+	_recalculate()
 
-func _update_line_edit_3() -> void:
-	if line_edit_1 and line_edit_2 and line_edit_3:
-		var combined_text = "LineEdit1: %s, LineEdit2: %s" % [line_edit_1.text, line_edit_2.text]
-		line_edit_3.text = combined_text
+# Function to recalculate the output
+func _recalculate() -> void:
+	# Assuming there's only one output LineEdit for simplicity
+	if output_boxes.size() > 0:
+		var line_edit_output = output_boxes[0].get_node("LineEdit")
+		var combined_text = ""
+		
+		# Combine the texts of all input LineEdit nodes
+		for input_box in input_boxes:
+			var line_edit_input = input_box.get_node("LineEdit")
+			combined_text += line_edit_input.text + " "
+		
+		# Update the output LineEdit
+		line_edit_output.text = combined_text.strip_edges()
