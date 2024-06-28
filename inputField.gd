@@ -11,7 +11,7 @@ func _ready():
 	line_edit = $LineEdit
 	# Connect LineEdit's text_changed signal to custom method
 	line_edit.text_changed.connect(Callable(self, "_on_line_edit_text_changed"))
-	$Button.button_pressed.connect(Callable(self, "_button_pressed"))
+	$Button.connect("pressed", _button_pressed.bind())
 func _on_line_edit_text_changed(new_text: String):
 	emit_signal("input_changed", new_text)
 
@@ -20,11 +20,13 @@ func _on_line_edit_text_changed(new_text: String):
 func set_text(initial_text: String):
 	line_edit.text = initial_text
 
-func _button_press()->void:
+func _button_pressed()->void:
 	if connectedTo!="None":
 		connectedTo = "None"
 	else:
-		pass
+		print(get_tree().root.get_child(0))
+		get_tree().root._on_Button_pressed($Button)
+		#._on_Button_pressed($Button)
 	
 
 # Method to get current text in the LineEdit

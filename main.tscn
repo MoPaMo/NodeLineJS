@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://bo2k8jmf4xreu"]
+[gd_scene load_steps=3 format=3 uid="uid://bo2k8jmf4xreu"]
 
+[ext_resource type="Script" path="res://lines.gd" id="1_bvesy"]
 [ext_resource type="PackedScene" uid="uid://8uog5cow04ho" path="res://default_node.tscn" id="1_fydfn"]
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_bvesy")
 
 [node name="CustomNode" parent="." instance=ExtResource("1_fydfn")]
 offset_left = 339.0
