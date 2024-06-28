@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://8uog5cow04ho"]
+[gd_scene load_steps=3 format=3 uid="uid://8uog5cow04ho"]
 
 [ext_resource type="Script" path="res://default_node.gd" id="1_dimob"]
+[ext_resource type="PackedScene" uid="uid://bhhk5wlqhwog5" path="res://input.tscn" id="2_vk5u0"]
 
 [node name="CustomNode" type="Panel"]
 offset_right = 40.0
@@ -21,22 +22,7 @@ layout_mode = 2
 [node name="Ins" type="VBoxContainer" parent="VBoxContainer/InOutSection"]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/InOutSection/Ins"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="VBoxContainer/InOutSection/Ins/HBoxContainer"]
-layout_mode = 2
-
-[node name="LineEdit" type="LineEdit" parent="VBoxContainer/InOutSection/Ins/HBoxContainer"]
-layout_mode = 2
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/InOutSection/Ins"]
-layout_mode = 2
-
-[node name="LineEdit" type="LineEdit" parent="VBoxContainer/InOutSection/Ins/HBoxContainer2"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="VBoxContainer/InOutSection/Ins/HBoxContainer2"]
+[node name="HBoxContainer" parent="VBoxContainer/InOutSection/Ins" instance=ExtResource("2_vk5u0")]
 layout_mode = 2
 
 [node name="Outs" type="VBoxContainer" parent="VBoxContainer/InOutSection"]
