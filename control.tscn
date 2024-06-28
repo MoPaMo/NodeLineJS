@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://bqxv8ai6257lj"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CustomNode" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CustomNode"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="CustomNode/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CustomNode/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CustomNode/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="LineEdit" type="LineEdit" parent="CustomNode/VBoxContainer/HBoxContainer/Label"]
+layout_mode = 0
+offset_right = 67.0625
+offset_bottom = 31.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CustomNode/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CustomNode/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="LineEdit" type="LineEdit" parent="CustomNode/VBoxContainer/HBoxContainer2/Label"]
+layout_mode = 0
+offset_right = 67.0625
+offset_bottom = 31.0
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="CustomNode/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CustomNode/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+
+[node name="LineEdit" type="LineEdit" parent="CustomNode/VBoxContainer/HBoxContainer3/Label"]
+layout_mode = 0
+offset_right = 67.0625
+offset_bottom = 31.0
